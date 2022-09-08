@@ -5,7 +5,7 @@ $(document).ready(function(){
 $('#login').on('click', function() {
     var email = $('#Email').val();
     console.log(email + ' is trying to login.');
-    loginFirebaseUser('jason.merrell@codeup.com', 'abc123');
+    loginFirebaseUser('jason.merrell@codeup.com', 'Abc123');
 });
 
 function loginFirebaseUser(email, password) {
