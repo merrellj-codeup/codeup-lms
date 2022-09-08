@@ -1,20 +1,16 @@
-import { getAuth } from "FirebaseAuth";
-
-// Initialize Firebase Authentication and get a reference to the service
-const auth = getAuth(app);
-
-const publicPages = [
+var db =  firebase.firestore();
+var publicPages = [
     '/',
     '/auth',
     '/login'
   ];
-const user = {
+var user = {
   'uid': null,
   'avatar': null,
   'email': null
 };
 
-auth.onAuthStateChanged((data) => {
+firebase.auth().onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
   if (data) {
     // User is signed in
@@ -53,7 +49,7 @@ function getCurrentUserData(userID) {
 $(document).on('click', '#logout', function(){
   firebase.auth().signOut().then(function() {
     //window.location.replace('https://nova-alliance.gg');
-    window.location.replace('/login');
+    window.location.replace('https://friction-free-commerce.webflow.io/login');
   }, function(error) {
     // An error happened.
     console.log('Error: ' + error);
