@@ -1,18 +1,20 @@
-import * as firebase from "FirebaseApp";
+import { getAuth } from "FirebaseAuth";
 
-var db =  firebase.firestore();
-var publicPages = [
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+
+const publicPages = [
     '/',
     '/auth',
     '/login'
   ];
-var user = {
+const user = {
   'uid': null,
   'avatar': null,
   'email': null
 };
 
-firebase.auth().onAuthStateChanged((data) => {
+auth.onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
   if (data) {
     // User is signed in
