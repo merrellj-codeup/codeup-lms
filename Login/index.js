@@ -1,9 +1,6 @@
-var Webflow = Webflow || [];
 
 $('#login').on('click', function() {
-    Webflow.push(function () {
-        $("#loginForm").validate();
-      }
+    $("#wf-form-Login-Form").validate();
     var email = $('#Email').val();
     console.log(email + ' is trying to login.');
 });
