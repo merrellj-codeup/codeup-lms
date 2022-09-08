@@ -1,12 +1,6 @@
 window.scrollTo({ top: 0, behavior: 'smooth' });
 $(document).ready(function(){
-  $('.page-loader').fadeOut();
-  $('.main-content-wrapper').css('display', 'flex').hide().fadeIn();
-  $('.left-nav-link').each(function(){
-    var menuText = $(this).find('.left-nav-toggle-text').text();
-    $(this).find('.tooltip-text').text(menuText);
-  });
-  $(window).trigger('scroll');
+
 });
 
 $('.left-nav-link').each(function(){
