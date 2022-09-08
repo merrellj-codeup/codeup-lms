@@ -1,6 +1,8 @@
+$(document).ready(function(){
+    $("#wf-form-Login-Form").validate();
+});
 
 $('#login').on('click', function() {
-    $("#wf-form-Login-Form").validate();
     var email = $('#Email').val();
     console.log(email + ' is trying to login.');
 });
