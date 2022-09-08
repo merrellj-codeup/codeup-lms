@@ -113,6 +113,28 @@
  display:none;
 }
 
+.timeline-wrapper::-webkit-scrollbar {
+    height: 7px;
+    background:#8853a11a;
+    box-shadow:none;
+    z-index:9999;
+}
+
+.timeline-wrapper::-webkit-scrollbar-thumb {
+    background-color: #78A34A;
+    height:10px;
+    border-radius:100px;
+    box-shadow:none;
+}
+
+.timeline-wrapper::-webkit-scrollbar-track {
+    display:none;
+}
+.timeline-wrapper::-webkit-scrollbar-track-piece {
+     box-shadow:none;
+     background:transparent;
+  }
+
 @media screen and (max-width:991px) {
   .left-navigation.closed .left-nav-link, .left-navigation.closed .customer-branding {
     width:240px;
@@ -139,79 +161,6 @@
     opacity:0;  
 }
 
-/* //////////////////////// Dark Mode ////////////////////*/
-
-.dark-mode .toggle.on {
-    border-color:#888888;  
-}
-  
-.dark-mode .header {
-    background-color: #202020;
-    border-bottom-color: #272727;
-}
-
-.dark-mode .main {
-    background-color: #181818;
-}
-
-.dark-mode .left-navigation {
-    background-color: #202020;
-    border-right-color: #272727;
-}
-
-body.dark-mode {
-    color: #a6a6a6;
-}
-
-body.dark-mode a {
-    color: #a6a6a6;  
-}
-  
-.dark-mode .left-nav-links {
-    background-color: #202020;
-}
-
-.dark-mode .left-nav-link-tooltip {
-    background-color: #202020;
-    color: #989898;
-}
-
-.dark-mode .search-input {
-    background-color: #202020;
-    border-color: #434343;
-}
-
-.dark-mode .user-image {
-    border-color: #202020;
-}
-
-.dark-mode .user-menu-dropdown-content {
-    background-color: #202020;
-    color: #a6a6a6;
-}
-.dark-mode .logo-text span.purple {
-    color: #fff;
-}
-.dark-mode .left-nav-link-toggle.w--current {
-    color: #57cdff;
-}
-  
-.dark-mode .tooltip-content {
-    color:#a6a6a6;
-    background-color:#202020;
-}
-
-.dark-mode .grid-box {
-  background-color:#202020;
-}
-
-.dark-mode .grid-box-button {
-  background-color: #272727;
-}
-
-.row-field:nth-child(odd) {
-    background-color: #ededed;
-}
 
 /* //////////////////////////////////////// START Select 2 Styling ///////////////////////////////////////////// */
 .select2-container {
