@@ -23,7 +23,7 @@ firebase.auth().onAuthStateChanged((data) => {
     if (publicPages.includes(currentPath)) {
       
     } else {
-      window.location.replace('/login');
+      window.location.replace('/');
     }
   }
 });
