@@ -114,10 +114,7 @@
 }
 
 .timeline-wrapper::-webkit-scrollbar {
-    height: 7px;
-    background:#8853a11a;
-    box-shadow:none;
-    z-index:9999;
+    display:none;
 }
 
 .timeline-wrapper::-webkit-scrollbar-thumb {
