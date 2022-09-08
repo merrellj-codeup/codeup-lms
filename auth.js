@@ -1,3 +1,5 @@
+import * as firebase from "FirebaseApp";
+
 var db =  firebase.firestore();
 var publicPages = [
     '/',
