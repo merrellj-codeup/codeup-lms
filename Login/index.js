@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    
+    $('#Email').val('jason.merrell@codeup.com');
+    $('#password').val('abc123');
 });
 
 $('input').keypress(function(event){
@@ -11,6 +12,7 @@ $('input').keypress(function(event){
 
 $('#login').on('click', function() {
     var email = $('#Email').val();
+    var password = $('#password').val();
     console.log(email + ' is trying to login.');
     loginFirebaseUser('jason.merrell@codeup.com', 'abc123');
 });
