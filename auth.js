@@ -7,7 +7,9 @@ var publicPages = [
 var user = {
   'uid': null,
   'avatar': null,
-  'email': null
+  'email': null,
+  'first_name': null,
+  'last_name': null
 };
 
 firebase.auth().onAuthStateChanged((data) => {
@@ -16,6 +18,8 @@ firebase.auth().onAuthStateChanged((data) => {
     // User is signed in
     user.uid = data.uid;
     user.email = data.email;
+    user.first_name = data.first_name;
+    user.last_name = data.last_name;
     getCurrentUserData(user.uid);
   } else {
     // User is signed out
