@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#wf-form-Login-Form").validate();
+    
 });
 
 $('#login').on('click', function() {
