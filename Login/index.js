@@ -2,6 +2,13 @@ $(document).ready(function(){
     
 });
 
+$('input').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+        $('#login').trigger('click');
+    }
+});
+
 $('#login').on('click', function() {
     var email = $('#Email').val();
     console.log(email + ' is trying to login.');
