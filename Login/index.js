@@ -1,7 +1,7 @@
 $('#login').on('click', function() {
     $("#loginForm").validate();
     var email = $('#Email').val();
-    console.log(username + ' is trying to login.');
+    console.log(email + ' is trying to login.');
 });
 
 function loginFirebaseUser(email, password) {
