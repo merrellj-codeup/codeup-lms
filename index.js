@@ -14,14 +14,18 @@ $(document).on('userData', function(){
 });
 
 $(document).on('cohortData', function(){
+  //changes made from cohort data go here
   cohortDataMounted = true;
   $(document).trigger('pageReady');
 });
 
 $(document).on('pageReady', function(){
-  if ((!userDataMounted) || (!cohortDataMounted))
+  if ((userDataMounted === false) || (cohortDataMounted === false)) {
     return;
-  $('.page-loader').fadeOut();
+  }
+  else {
+    $('.page-loader').fadeOut();
+  }
 });
 
 $('.left-nav-link').each(function(){
