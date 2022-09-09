@@ -3,6 +3,11 @@ window.scrollTo({ top: 0, behavior: 'smooth' });
 $(document).on('userData', function(){
   $('#active-cohort').val(user.active_cohort);
   $('#active-cohort').trigger('change');
+  $(document).trigger('pageReady');
+});
+
+$(document).on('pageReady', function(){
+  $('.page-loader').fadeOut();
 });
 
 $('.left-nav-link').each(function(){
