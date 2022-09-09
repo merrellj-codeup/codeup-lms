@@ -17,12 +17,8 @@ firebase.auth().onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
   if (data) {
     // User is signed in
-    console.log(data);
     user.uid = data.uid;
     user.email = data.email;
-    user.first_name = data.first_name;
-    user.last_name = data.last_name;
-    user.active_cohort = data.active_cohort;
     getCurrentUserData(user.uid);
   } else {
     // User is signed out
