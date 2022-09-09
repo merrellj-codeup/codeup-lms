@@ -8,7 +8,7 @@ $(document).ready(function(){
 });
 
 $(document).on('userData', function(){
-
+  $('#active-cohort').val(user.active_cohort);
 });
 
 $(document).on('pageReady', function(){
