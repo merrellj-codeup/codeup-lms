@@ -1,5 +1,9 @@
 window.scrollTo({ top: 0, behavior: 'smooth' });
 
+$(document).on('userData', function(){
+  $('#active-cohort').val(user.active_cohort);
+});
+
 $('.left-nav-link').each(function(){
   var currentPages = $(this).find('.w--current').length;
   if (currentPages > 0) {
