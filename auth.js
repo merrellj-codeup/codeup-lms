@@ -61,7 +61,9 @@ function getCohortData() {
           querySnapshot.forEach(function(doc) {
               // doc.data() is never undefined for query doc snapshots
               var cohortID = doc.data();
-              cohorts.push(cohortID);
+              cohorts[cohortID] = {
+                'class_code': doc.data().class_code
+              };
           });
           console.log(cohorts);
           $(document).trigger('cohortData');
