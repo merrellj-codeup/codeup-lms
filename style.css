@@ -221,7 +221,10 @@
 .select2-container--default .select2-results__option--selected.select2-results__option--highlighted {
     background-color: #769e48;
     color: #ffffff;
-    font-weight: 600;
+}
+
+.select2-container--default .select2-results__option--selected {
+    background-color: #769e486e;
 }
 
 tr {
