@@ -1,8 +1,12 @@
 window.scrollTo({ top: 0, behavior: 'smooth' });
 
 $(document).on('userData', function(){
+  //change active cohort in select menu
   $('#active-cohort').val(user.active_cohort);
   $('#active-cohort').trigger('change');
+
+  //change username
+  $('.header-link-text.username-text').text(user.first_name + ' ' + user.last_name);
   $(document).trigger('pageReady');
 });
 
