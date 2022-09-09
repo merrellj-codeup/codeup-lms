@@ -7,6 +7,10 @@ $(document).ready(function(){
   $(document).trigger('pageReady');
 });
 
+$(document).on('userData', function(){
+
+});
+
 $(document).on('pageReady', function(){
   $('.page-loader').fadeOut();
   $('.timeline-wrapper').animate({scrollLeft: ( ($('#week5').position().left) - 75 )}, 1000);

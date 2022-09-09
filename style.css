@@ -7,6 +7,11 @@
     display:flex;
 }
 
+.header .page-loader {
+    background-color:#07121A;
+    display:flex;
+}
+
 .main-content .main-content-wrapper {
   display:flex;
 }
