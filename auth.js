@@ -41,6 +41,7 @@ function getCurrentUserData(userID) {
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
+            user.uid = doc.data().uid;
             user.avatar = doc.data().avatar;
             user.first_name = doc.data().first_name;
             user.last_name = doc.data().last_name;
