@@ -44,6 +44,8 @@ function getCurrentUserData(userID) {
             user.avatar = doc.data().avatar;
             user.first_name = doc.data().first_name;
             user.last_name = doc.data().last_name;
+            user.email = doc.data().email;
+            user.active_cohort = doc.data().active_cohort;
           
         });
         $(document).trigger('userData');
