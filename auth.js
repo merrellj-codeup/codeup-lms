@@ -66,7 +66,6 @@ function getCohortData() {
                 'type': doc.data().type
               };
           });
-          console.log(cohorts);
           $(document).trigger('cohortData');
       })
       .catch(function(error) {
