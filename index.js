@@ -1,4 +1,6 @@
 window.scrollTo({ top: 0, behavior: 'smooth' });
+var userDataMounted = false;
+var cohortDataMounted = false;
 
 $(document).on('userData', function(){
   //change active cohort in select menu
@@ -7,10 +9,18 @@ $(document).on('userData', function(){
 
   //change username
   $('.header-link-text.username-text').text(user.first_name + ' ' + user.last_name);
+  userDataMounted = true;
+  $(document).trigger('pageReady');
+});
+
+$(document).on('cohortData', function(){
+  cohortDataMounted = true;
   $(document).trigger('pageReady');
 });
 
 $(document).on('pageReady', function(){
+  if ((!userDataMounted) || (!cohortDataMounted))
+    return;
   $('.page-loader').fadeOut();
 });
 

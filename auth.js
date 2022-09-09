@@ -4,7 +4,7 @@ var publicPages = [
     '/auth',
     '/login'
   ];
-var user = {
+const user = {
   'uid': null,
   'avatar': null,
   'email': null,
@@ -12,6 +12,7 @@ var user = {
   'last_name': null,
   'active_cohort': null
 };
+const cohorts = {};
 
 firebase.auth().onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
@@ -46,11 +47,29 @@ function getCurrentUserData(userID) {
           
         });
         $(document).trigger('userData');
+        getCohortData(user.uid);
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
 }
+
+function getCohortData() {
+    db.collection("cohorts")
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              var cohortID = doc.data();
+              cohorts.push(cohortID);
+          });
+          console.log(cohorts);
+          $(document).trigger('cohortData');
+      })
+      .catch(function(error) {
+          console.log("Error getting documents: ", error);
+      });
+  }
 
 $(document).on('click', '#logout', function(){
   firebase.auth().signOut().then(function() {
