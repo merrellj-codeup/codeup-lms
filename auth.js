@@ -9,13 +9,15 @@ var user = {
   'avatar': null,
   'email': null,
   'first_name': null,
-  'last_name': null
+  'last_name': null,
+  'active_cohort': null
 };
 
 firebase.auth().onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
   if (data) {
     // User is signed in
+    console.log(data);
     user.uid = data.uid;
     user.email = data.email;
     user.first_name = data.first_name;
