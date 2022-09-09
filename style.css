@@ -210,16 +210,16 @@
 }
 
 .select2-container--default .select2-results__option--selected.select2-results__option--highlighted {
-    background-color: #769e48;
+    background-color: #769e486e;
     color: #ffffff;
 }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: #749e47;
+    background-color: #769e486e;
 }
 
 .select2-container--default .select2-results__option--selected.select2-results__option--highlighted {
-    background-color: #769e48;
+    background-color: #769e486e;
     color: #ffffff;
 }
 
