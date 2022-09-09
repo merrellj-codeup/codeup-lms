@@ -198,6 +198,11 @@
     border-color: #ffffff3b transparent transparent transparent;
 }
 
+.select2-dropdown {
+    background-color: #111d27;
+    border: 1px solid #769e49;
+}
+
 tr {
     display: table-row;
     vertical-align: inherit;
