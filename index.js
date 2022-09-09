@@ -1,6 +1,10 @@
 window.scrollTo({ top: 0, behavior: 'smooth' });
 $(document).ready(function(){
+  $(document).trigger('pageReady');
+});
 
+$(document).on('pageReady', function(){
+  $('.page-loader').fadeOut();
 });
 
 $('.left-nav-link').each(function(){

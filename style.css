@@ -1,5 +1,5 @@
 .main-content .page-loader {
-  display:none!important;
+  display:flex;
 }
 
 .main-content .main-content-wrapper {
