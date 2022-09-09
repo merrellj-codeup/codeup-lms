@@ -1,15 +1,13 @@
-.main-content .page-loader {
-  display:flex;
+.page-loader {
+    display:flex;
 }
 
 .left-navigation .page-loader {
     background-color:#263543;
-    display:flex;
 }
 
 .header .page-loader {
     background-color:#07121A;
-    display:flex;
 }
 
 .main-content .main-content-wrapper {
