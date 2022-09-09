@@ -20,6 +20,7 @@ firebase.auth().onAuthStateChanged((data) => {
     user.email = data.email;
     user.first_name = data.first_name;
     user.last_name = data.last_name;
+    user.active_cohort = data.active_cohort;
     getCurrentUserData(user.uid);
   } else {
     // User is signed out
