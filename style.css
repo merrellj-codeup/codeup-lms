@@ -204,6 +204,12 @@
     color: #33333369;
 }
 
+.select2-container--default .select2-selection--single {
+    background-color: #111d27;
+    border: 1px solid #769e48;
+    border-radius: 4px;
+}
+
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     background-color: transparent;
     border: none;
