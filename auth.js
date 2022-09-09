@@ -62,7 +62,8 @@ function getCohortData() {
               // doc.data() is never undefined for query doc snapshots
               var cohortID = doc.id;
               cohorts[cohortID] = {
-                'class_code': doc.data().class_code
+                'class_code': doc.data().class_code,
+                'type': doc.data().type
               };
           });
           console.log(cohorts);
