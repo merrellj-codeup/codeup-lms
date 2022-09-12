@@ -13,7 +13,7 @@ const user = {
   'active_cohort': null
 };
 const cohorts = {};
-const cohort;
+var cohort;
 
 firebase.auth().onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
