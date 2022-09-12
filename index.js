@@ -28,6 +28,10 @@ $(document).on('pageReady', function(){
   }
 });
 
+$(document).on('click', '.select2-active-cohort-results li', function(){
+  alert('Switch active_cohort on user');
+});
+
 $('.left-nav-link').each(function(){
   var currentPages = $(this).find('.w--current').length;
   if (currentPages > 0) {
