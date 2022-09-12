@@ -63,7 +63,9 @@ function getCohortData() {
               var cohortID = doc.id;
               cohorts[cohortID] = {
                 'class_code': doc.data().class_code,
-                'type': doc.data().type
+                'type': doc.data().type,
+                'stats': doc.data().status,
+                'classroom_id': doc.data().classroom_id
               };
           });
           $(document).trigger('cohortData');
