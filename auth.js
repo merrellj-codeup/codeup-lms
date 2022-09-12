@@ -64,7 +64,7 @@ function getCohortData() {
               cohorts[cohortID] = {
                 'class_code': doc.data().class_code,
                 'type': doc.data().type,
-                'stats': doc.data().status,
+                'status': doc.data().status,
                 'classroom_id': doc.data().classroom_id
               };
           });
