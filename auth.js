@@ -68,6 +68,11 @@ function getCohortData() {
                 'classroom_id': doc.data().classroom_id
               };
           });
+          $.each(cohorts, function( index, value ) {
+            if (index === user.active_cohort) {
+                const cohort = value;
+            }
+          });
           $(document).trigger('cohortData');
       })
       .catch(function(error) {
