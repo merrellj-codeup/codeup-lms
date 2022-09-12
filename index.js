@@ -28,7 +28,7 @@ $(document).on('pageReady', function(){
   }
 });
 
-$(document).on('click', '.select2-active-cohort-results li', function(){
+$('.select2-active-cohort-results li').on('click', function(){
   alert('Switch active_cohort on user');
 });
 
