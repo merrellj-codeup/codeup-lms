@@ -13,6 +13,7 @@ const user = {
   'active_cohort': null
 };
 const cohorts = {};
+const cohort;
 
 firebase.auth().onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
@@ -70,7 +71,7 @@ function getCohortData() {
           });
           $.each(cohorts, function( index, value ) {
             if (index === user.active_cohort) {
-                const cohort = value;
+                cohort = value;
             }
           });
           $(document).trigger('cohortData');
