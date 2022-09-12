@@ -235,6 +235,10 @@
     background-color: #769e486e;
 }
 
+.select2-search__field {
+  outline: none;
+}
+
 tr {
     display: table-row;
     vertical-align: inherit;
