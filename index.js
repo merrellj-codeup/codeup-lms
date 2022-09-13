@@ -25,11 +25,11 @@ $(document).on('pageReady', function(){
   }
   else {
     $('.page-loader').fadeOut();
+    
+    $('#select2-active-cohort-results').on('select2:select', function(){
+      alert('Switch active_cohort on user');
+    });
   }
-});
-
-$('#select2-active-cohort-results li').on('click', function(){
-  alert('Switch active_cohort on user');
 });
 
 $('.left-nav-link').each(function(){
