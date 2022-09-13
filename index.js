@@ -31,7 +31,7 @@ $(document).on('pageReady', function(){
 $('#active-cohort').on('select2:select', function(){
   var newCohort = $('#active-cohort').find(':selected').first().text();
   console.log(newCohort.toLowerCase());
-  //changeActiveCohort();
+  changeActiveCohort(newCohort);
 });
 
 $('.left-nav-link').each(function(){
@@ -170,4 +170,18 @@ function toggleMobileMenu(){
   }
 }
 
+function changeActiveCohort(cohortName) {
+  var docRef = firebase.firestore().collection("users").doc(user.uid);
+  docRef.get().then(function(thisDoc) {
+    docRef.update({
+        active_cohort: cohortName
+      }).then(function(){
+          location.reload();
+      }).catch(function(error){
+        console.log(error.message);
+      });
+  }).catch(function(error){
+      console.log(error.message);
+  });
+}
 
