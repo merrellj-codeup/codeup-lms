@@ -29,8 +29,8 @@ $(document).on('pageReady', function(){
 });
 
 $('#active-cohort').on('select2:select', function(){
-  var newCohort = $('#active-cohort').find(':selected').first().text();
-  console.log(newCohort.toLowerCase());
+  var newCohort = $('#active-cohort').find(':selected').first().text().toLowerCase();
+  console.log(newCohort);
   changeActiveCohort(newCohort);
 });
 
