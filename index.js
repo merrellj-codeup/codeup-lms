@@ -29,7 +29,9 @@ $(document).on('pageReady', function(){
 });
 
 $('#active-cohort').on('select2:select', function(){
-  alert('Switch active_cohort on user');
+  var newCohort = $('#active-cohort').find(':selected').first().text();
+  console.log(newCohort);
+  //changeActiveCohort();
 });
 
 $('.left-nav-link').each(function(){
