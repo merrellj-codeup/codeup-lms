@@ -30,7 +30,7 @@ $(document).on('pageReady', function(){
 
 $('#active-cohort').on('select2:select', function(){
   var newCohort = $('#active-cohort').find(':selected').first().text();
-  console.log(newCohort);
+  console.log(newCohort.toLowerCase());
   //changeActiveCohort();
 });
 
