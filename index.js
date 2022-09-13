@@ -25,8 +25,8 @@ $(document).on('pageReady', function(){
   }
   else {
     $('.page-loader').fadeOut();
-    
-    $('#select2-active-cohort-results').on('select2:select', function(){
+
+    $('#active-cohort').on('select2:select', function(){
       alert('Switch active_cohort on user');
     });
   }
