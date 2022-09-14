@@ -36,8 +36,7 @@ $('#googleAuth').on('click', function(){
             // The signed-in user info.
             //var user = result.user;
             // ...
-            console.log(result.user);
-            //updateUser(credential.idToken, token, email, user);
+            updateUser(credential.idToken, token, email, result.user.uid);
         }).catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
@@ -64,14 +63,14 @@ function loginFirebaseUser(email, password) {
         });
 }
 
-function updateUser(tokenID, token, email, user){
+function updateUser(tokenID, token, email, uid){
     //var nickname = scrubnick(serverData.nick);
     
-    db.collection("users").doc(user.uid).set({
-        uid: user.uid,
+    db.collection("users").doc(uid).set({
+        uid: uid,
         email: email,
         tokenID: tokenID,
-        google_token: token,
+        token: token,
         last_login: firebase.firestore.Timestamp.fromDate(new Date()),
     }, { merge: true })
     .then(() => {
