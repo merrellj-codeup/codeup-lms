@@ -85,8 +85,9 @@ function getCohortData() {
                 cohort = value;
             }
           });
+          getStudents(cohort.classroom_id, user.token);
           //getStudents("545471210641", user.token);
-          getCourseId(user.token);
+          getCourses(user.token);
           $(document).trigger('cohortData');
       })
       .catch(function(error) {
@@ -95,6 +96,26 @@ function getCohortData() {
     
 }
 
+
+function getCourses(token) {
+    // https://classroom.googleapis.com/v1/courses?teacherId=me
+    const url = "https://classroom.googleapis.com/v1/courses?teacherId=me";
+    const options = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+    let courseId = -1;
+    fetch(url, options)
+        .then(response => {
+            return response.json();
+        }).then(json => {
+            courseId = json.courses[0].id;
+            // getCourseGrades(courseId, token);
+            console.log(json);
+            return courseId;
+        });
+}
 
 function getStudents(courseId, token) {
     const url = `https://classroom.googleapis.com/v1/courses/${courseId}/students`;
@@ -114,28 +135,8 @@ function getStudents(courseId, token) {
                     name: json.students[i].profile.name
                 }
                 students[student.id] = student;
+                console.log(students);
             }
         });
-    console.log(students);
     return students;
-}
-
-function getCourseId(token) {
-    // https://classroom.googleapis.com/v1/courses?teacherId=me
-    const url = "https://classroom.googleapis.com/v1/courses?teacherId=me";
-    const options = {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    };
-    let courseId = -1;
-    fetch(url, options)
-        .then(response => {
-            return response.json();
-        }).then(json => {
-            courseId = json.courses[0].id;
-            // getCourseGrades(courseId, token);
-            console.log(json);
-            return courseId;
-        });
 }
