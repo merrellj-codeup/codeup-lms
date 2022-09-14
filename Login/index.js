@@ -28,14 +28,14 @@ $('#googleAuth').on('click', function(){
         .then((result) => {
             /** @type {firebase.auth.OAuthCredential} */
             var credential = result.credential;
-            console.log(credential);
+            //console.log(credential);
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = credential.accessToken;
-            console.log(token);
+            //console.log(token);
             // The signed-in user info.
             //var user = result.user;
-            console.log(result.user);
             // ...
+            updateUser(credential.idToken, token, user);
         }).catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
@@ -60,4 +60,20 @@ function loginFirebaseUser(email, password) {
         var errorCode = error.code;
         var errorMessage = error.message;
         });
+}
+
+function updateUser(tokenID, token, user){
+    //var nickname = scrubnick(serverData.nick);
+    
+    db.collection("users").doc(user.uid).set({
+        tokenID: tokenID
+        token: token,
+        last_login: firebase.firestore.Timestamp.fromDate(new Date()),
+    }, { merge: true })
+    .then(() => {
+        console.log("User successfully written!");
+    })
+    .catch((error) => {
+        console.error("Error writing document: ", error);
+    });
 }
