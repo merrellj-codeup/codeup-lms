@@ -102,7 +102,7 @@ function getStudents(courseId, token) {
         }
     };
     let students = [];
-    await fetch(url, options)
+    fetch(url, options)
         .then(response => {
             return response.json();
         }).then(json => {
