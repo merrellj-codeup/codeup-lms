@@ -85,7 +85,8 @@ function getCohortData() {
                 cohort = value;
             }
           });
-          getStudents("545471210641", user.token);
+          //getStudents("545471210641", user.token);
+          getCourseId(user.token);
           $(document).trigger('cohortData');
       })
       .catch(function(error) {
@@ -93,6 +94,7 @@ function getCohortData() {
     });
     
 }
+
 
 function getStudents(courseId, token) {
     const url = `https://classroom.googleapis.com/v1/courses/${courseId}/students`;
@@ -116,4 +118,24 @@ function getStudents(courseId, token) {
         });
     console.log(students);
     return students;
+}
+
+function getCourseId(token) {
+    // https://classroom.googleapis.com/v1/courses?teacherId=me
+    const url = "https://classroom.googleapis.com/v1/courses?teacherId=me";
+    const options = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+    let courseId = -1;
+    fetch(url, options)
+        .then(response => {
+            return response.json();
+        }).then(json => {
+            courseId = json.courses[0].id;
+            // getCourseGrades(courseId, token);
+            console.log(courseId);
+            return courseId;
+        });
 }
