@@ -23,7 +23,8 @@ $('#login').on('click', function() {
 
 $('#googleAuth').on('click', function(){
     firebase.auth()
-        .signInWithRedirect(provider).then((result) => {
+    .signInWithPopup(provider)
+    .then((result) => {
             /** @type {firebase.auth.OAuthCredential} */
             var credential = result.credential;
         
