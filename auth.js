@@ -88,7 +88,6 @@ function getCohortData() {
           getStudents(cohort.classroom_id, user.token);
           //getStudents("545471210641", user.token);
           getCourses(user.token);
-          $(document).trigger('cohortData');
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);
@@ -136,6 +135,8 @@ function getStudents(courseId, token) {
                 }
                 students[student.id] = student;
                 console.log("There are " + json.students.length + " students in this cohort.");
+                cohort.student_count = json.students.length;
+                $(document).trigger('cohortData');
             }
         });
     return students;
