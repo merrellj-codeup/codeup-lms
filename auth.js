@@ -45,7 +45,8 @@ function getCurrentUserData(userID) {
             user.last_name = doc.data().last_name;
             user.email = doc.data().email;
             user.active_cohort = doc.data().active_cohort;
-          
+            user.token = doc.data().token;
+            user.tokenID = doc.data().tokenID;
         });
         $(document).trigger('userData');
         getCohortData(user.uid);
