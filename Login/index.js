@@ -36,7 +36,8 @@ $('#googleAuth').on('click', function(){
             // The signed-in user info.
             //var user = result.user;
             // ...
-            updateUser(credential.idToken, token, email, user);
+            console.log(credential);
+            //updateUser(credential.idToken, token, email, user);
         }).catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
