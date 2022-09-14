@@ -85,12 +85,12 @@ function getCohortData() {
                 cohort = value;
             }
           });
+          getStudents("NTQ1NDcxMjEwNjQx", user.token);
           $(document).trigger('cohortData');
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);
     });
-    getStudents("NTQ1NDcxMjEwNjQx", user.token);
     
 }
 
