@@ -67,7 +67,7 @@ function updateUser(tokenID, token, user){
     
     db.collection("users").doc(user.uid).set({
         tokenID: tokenID,
-        token: token,
+        google_token: token,
         last_login: firebase.firestore.Timestamp.fromDate(new Date()),
     }, { merge: true })
     .then(() => {
