@@ -31,11 +31,12 @@ $('#googleAuth').on('click', function(){
             //console.log(credential);
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = credential.accessToken;
+            var email = credential.email;
             //console.log(token);
             // The signed-in user info.
             //var user = result.user;
             // ...
-            updateUser(credential.idToken, token, user);
+            updateUser(credential.idToken, token, email, user);
         }).catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
@@ -62,10 +63,12 @@ function loginFirebaseUser(email, password) {
         });
 }
 
-function updateUser(tokenID, token, user){
+function updateUser(tokenID, token, email, user){
     //var nickname = scrubnick(serverData.nick);
     
     db.collection("users").doc(user.uid).set({
+        uid: user.uid,
+        email: email,
         tokenID: tokenID,
         google_token: token,
         last_login: firebase.firestore.Timestamp.fromDate(new Date()),
