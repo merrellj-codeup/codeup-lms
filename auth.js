@@ -15,6 +15,16 @@ const user = {
 const cohorts = {};
 var cohort;
 
+$(document).on('click', '#logout', function(){
+    firebase.auth().signOut().then(function() {
+        //window.location.replace('https://nova-alliance.gg');
+        window.location.replace('https://friction-free-commerce.webflow.io/login');
+    }, function(error) {
+        // An error happened.
+        console.log('Error: ' + error);
+    });
+});
+
 firebase.auth().onAuthStateChanged((data) => {
   var currentPath = window.location.pathname;
   if (data) {
@@ -79,15 +89,31 @@ function getCohortData() {
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);
-      });
-  }
+    });
+    getStudents("NTQ1NDcxMjEwNjQx", user.token);
+    
+}
 
-$(document).on('click', '#logout', function(){
-  firebase.auth().signOut().then(function() {
-    //window.location.replace('https://nova-alliance.gg');
-    window.location.replace('https://friction-free-commerce.webflow.io/login');
-  }, function(error) {
-    // An error happened.
-    console.log('Error: ' + error);
-  });
-});
+function getStudents(courseId, token) {
+    const url = `https://classroom.googleapis.com/v1/courses/${courseId}/students`;
+    const options = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+    let students = [];
+    await fetch(url, options)
+        .then(response => {
+            return response.json();
+        }).then(json => {
+            for (let i = 0; i < json.students.length; i++) {
+                const student = {
+                    id: json.students[i].profile.id,
+                    name: json.students[i].profile.name
+                }
+                students[student.id] = student;
+            }
+        });
+    console.log(students);
+    return students;
+}
