@@ -135,7 +135,7 @@ function getStudents(courseId, token) {
                     name: json.students[i].profile.name
                 }
                 students[student.id] = student;
-                console.log("There are " + students.length + " in this cohort.");
+                console.log("There are " + json.students.length + " students in this cohort.");
             }
         });
     return students;
