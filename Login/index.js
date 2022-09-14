@@ -32,7 +32,8 @@ $('#googleAuth').on('click', function(){
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = credential.accessToken;
             // The signed-in user info.
-            var user = result.user;
+            //var user = result.user;
+            console.log(result.user);
             // ...
         }).catch((error) => {
             // Handle Errors here.
