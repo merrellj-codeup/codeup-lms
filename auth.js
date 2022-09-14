@@ -112,7 +112,7 @@ function getCourses(token) {
         }).then(json => {
             courseId = json.courses[0].id;
             // getCourseGrades(courseId, token);
-            console.log(json);
+            //console.log(json);
             return courseId;
         });
 }
@@ -135,7 +135,7 @@ function getStudents(courseId, token) {
                     name: json.students[i].profile.name
                 }
                 students[student.id] = student;
-                console.log(students);
+                console.log("There are " + students.length + " in this cohort.");
             }
         });
     return students;
