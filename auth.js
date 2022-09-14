@@ -85,7 +85,7 @@ function getCohortData() {
                 cohort = value;
             }
           });
-          getStudents(cohort.classroom_id, user.token);
+          cohort.classroom_id && getStudents(cohort.classroom_id, user.token);
           //getStudents("545471210641", user.token);
           getCourses(user.token);
       })
