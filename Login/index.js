@@ -43,6 +43,7 @@ $('#googleAuth').on('click', function(){
             var email = error.email;
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
+            console.log(error);
             // ...
         });
 });
