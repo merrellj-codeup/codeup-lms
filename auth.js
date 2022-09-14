@@ -135,7 +135,7 @@ function getCourseId(token) {
         }).then(json => {
             courseId = json.courses[0].id;
             // getCourseGrades(courseId, token);
-            console.log(courseId);
+            console.log(json);
             return courseId;
         });
 }
