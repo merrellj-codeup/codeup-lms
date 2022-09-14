@@ -66,7 +66,7 @@ function updateUser(tokenID, token, user){
     //var nickname = scrubnick(serverData.nick);
     
     db.collection("users").doc(user.uid).set({
-        tokenID: tokenID
+        tokenID: tokenID,
         token: token,
         last_login: firebase.firestore.Timestamp.fromDate(new Date()),
     }, { merge: true })
