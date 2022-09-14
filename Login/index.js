@@ -72,6 +72,7 @@ function updateUser(tokenID, token, user){
     }, { merge: true })
     .then(() => {
         console.log("User successfully written!");
+        window.location.replace('/dashboard');
     })
     .catch((error) => {
         console.error("Error writing document: ", error);
