@@ -1,5 +1,5 @@
 .page-loader {
-    display:none;
+    display:flex;
 }
 
 .left-navigation .page-loader {
