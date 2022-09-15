@@ -72,12 +72,6 @@ $('[data-dropdown="toggle"]').on('click', function(){
     arrow = parent.find('[data-dropdown="arrow"]').first(),
     list = $(this).parents('[data-dropdown="parent"]').first().find('[data-dropdown="menu"]').first();
   
-  var screenWidth = $(window).width();
-  
-  if (toggle.hasClass('user-menu-toggle') && screenWidth < 991 ) {
-    toggleMobileMenu();
-    return;
-  }
   if (list.hasClass('closed')) {
     var curHeight = list.height(),
         autoHeight = list.css('height', 'auto').outerHeight();
