@@ -19,6 +19,7 @@ function getCoursework(courseId, accessToken) {
         .then(response => {
             return response.json();
         }).then(json => {
+            console.log(json);
             for (let i = 0; i < json.courseWork.length ; i++) {
                 const cw = {
                     id: json.courseWork[i].id,
@@ -29,6 +30,5 @@ function getCoursework(courseId, accessToken) {
                 coursework[cw.id] = cw;
             }
         });
-    console.log(coursework);
     return coursework;
 }
