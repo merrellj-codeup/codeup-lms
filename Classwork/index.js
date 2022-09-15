@@ -2,7 +2,7 @@ $(document).on('pageReady', function(){
     $('.timeline-wrapper').animate({scrollLeft: ( ($('#week5').position().left) - 75 )}, 1000);
 });
 
-$(document).on('pageReady', function(){
+$(document).on('cohortData', function(){
     getCoursework(cohort.classroom_id, user.token);
 });
 
