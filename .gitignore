@@ -1,1 +1,3 @@
 *.code-workspace
+/Firebase
+database.rules.json
