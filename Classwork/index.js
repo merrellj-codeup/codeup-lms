@@ -8,7 +8,7 @@ $(document).on('cohortData', function(){
 
 function getCoursework(courseId, accessToken) {
     // https://classroom.googleapis.com/v1/courses?teacherId=me
-    const url = `https://classroom.googleapis.com/v1/courses/${courseId}/courseWork`;
+    const url = `https://classroom.googleapis.com/v1/courses/${courseId}/topics`;
     const options = {
         headers: {
             Authorization: `Bearer ${accessToken}`
