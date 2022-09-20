@@ -18,7 +18,7 @@ var cohort;
 $(document).on('click', '#logout', function(){
     firebase.auth().signOut().then(function() {
         //window.location.replace('https://nova-alliance.gg');
-        window.location.replace('https://friction-free-commerce.webflow.io/login');
+        window.location.replace('/');
     }, function(error) {
         // An error happened.
         console.log('Error: ' + error);
@@ -127,7 +127,8 @@ function getStudents(courseId, token) {
     fetch(url, options)
         .then(response => {
             return response.json();
-        }).then(json => {
+        })
+        .then(json => {
             for (let i = 0; i < json.students.length; i++) {
                 const student = {
                     id: json.students[i].profile.id,
@@ -138,6 +139,15 @@ function getStudents(courseId, token) {
                 cohort.student_count = json.students.length;
                 $(document).trigger('cohortData');
             }
+        })
+        .catch(function(error) {
+            //Most errors are a result of a bad token. Easy fix is to log them out
+            firebase.auth().signOut().then(function() {
+                window.location.replace('/');
+            }, function(error) {
+                // An error happened.
+                console.log('Error: ' + error);
+            });
         });
     return students;
 }
