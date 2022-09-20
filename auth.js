@@ -108,12 +108,22 @@ function getCourses(token) {
     fetch(url, options)
         .then(response => {
             return response.json();
-        }).then(json => {
+        })
+        .then(json => {
             courseId = json.courses[0].id;
             // getCourseGrades(courseId, token);
             //console.log(json);
             return courseId;
-        });
+        })
+        .catch(function(error) {
+            //Most errors are a result of a bad token. Easy fix is to log them out
+            firebase.auth().signOut().then(function() {
+                window.location.replace('/');
+            }, function(error) {
+                // An error happened.
+                console.log('Error: ' + error);
+            });
+        });;
 }
 
 function getStudents(courseId, token) {
