@@ -43,7 +43,7 @@ firebase.auth().onAuthStateChanged((data) => {
   }
 });
 
-function getCurrentUserData(userID) {
+function getCurrentUserData(userID){
   db.collection("users").where("uid", "==", userID)
     .get()
     .then(function(querySnapshot) {
@@ -66,7 +66,7 @@ function getCurrentUserData(userID) {
     });
 }
 
-function getCohortData() {
+function getCohortData(){
     db.collection("cohorts")
       .get()
       .then(function(querySnapshot) {
@@ -96,7 +96,7 @@ function getCohortData() {
 }
 
 
-function getCourses(token) {
+function getCourses(token){
     // https://classroom.googleapis.com/v1/courses?teacherId=me
     const url = "https://classroom.googleapis.com/v1/courses?teacherId=me";
     const options = {
@@ -126,7 +126,7 @@ function getCourses(token) {
         });;
 }
 
-function getStudents(courseId, token) {
+function getStudents(courseId, token){
     const url = `https://classroom.googleapis.com/v1/courses/${courseId}/students`;
     const options = {
         headers: {
@@ -145,7 +145,7 @@ function getStudents(courseId, token) {
                     name: json.students[i].profile.name
                 }
                 students[student.id] = student;
-                console.log("There are " + json.students.length + " students in this cohort.");
+                //console.log("There are " + json.students.length + " students in this cohort.");
                 cohort.student_count = json.students.length;
                 $(document).trigger('cohortData');
             }
@@ -160,4 +160,18 @@ function getStudents(courseId, token) {
             });
         });
     return students;
+}
+
+function getUsers(){
+    fetch('https://us-central1-codeup-lms.cloudfunctions.net/graphql', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: `
+          query {
+            users
+          }` 
+        }),
+      })
+      .then(res => res.json())
+      .then(res => console.log(res.data));
 }
