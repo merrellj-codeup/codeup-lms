@@ -21,8 +21,8 @@ $(document).on('click', '.cal-saved-status', function(){
 $(document).on('click', '.cal-event', function(){
     let currentStatus = $(this).find('.cal-event-status').text();
     $('[data-save="attendance"]').addClass('cta');
-    $(this).parents('.cal-day').find('.cal-saved-status saved').addClass('unsaved');
-    $(this).parents('.cal-day').find('.cal-saved-status saved').children('div').text('Unsaved');
+    $(this).parents('.cal-day').find('.cal-saved-status').addClass('unsaved');
+    $(this).parents('.cal-day').find('.cal-saved-status').children('div').text('Unsaved');
     switch(currentStatus) {
         case "P":
             $(this).html(`<div class="cal-event-status present">PV</div>`);
