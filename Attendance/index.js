@@ -6,7 +6,7 @@ $(document).on('click', '.cal-saved-status', function(){
             $(this).addClass('unsaved');
             $('[data-save="attendance"]').addClass('cta');
             $(this).siblings('.cal-event').each(function(){
-                $(this).innerHTML(`
+                $(this).append(`
                     <div class="cal-event-status present">P</div>
                 `);
             });
