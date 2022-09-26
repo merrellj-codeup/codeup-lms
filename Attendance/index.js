@@ -4,6 +4,7 @@ $(document).on('click', '.cal-saved-status', function(){
         case "Start":
             $(this).children('div').text('Unsaved');
             $(this).addClass('unsaved');
+            $('[data-save="attendance"]').addClass('cta');
             break;
         case "Unsaved":
             break;
