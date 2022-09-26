@@ -19,7 +19,7 @@ $(document).on('click', '.cal-saved-status', function(){
 });
 
 $(document).on('click', '.cal-event', function(){
-    let currentStatus = $(this).find('.cal-event-status absent').text();
+    let currentStatus = $(this).find('.cal-event-status').text();
     $('[data-save="attendance"]').addClass('cta');
     $(this).parents('.cal-day').find('.cal-saved-status saved').addClass('unsaved');
     $(this).parents('.cal-day').find('.cal-saved-status saved').children('div').text('Unsaved');
