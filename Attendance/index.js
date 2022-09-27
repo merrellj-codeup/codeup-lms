@@ -23,8 +23,8 @@ $(document).ready(function(){
           responsive: true,
           plugins: {
             legend: {
-              //position: 'top',
-              display: false
+              position: 'top',
+              //display: false
             },
             title: {
               display: false,
