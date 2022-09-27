@@ -72,15 +72,6 @@ $(document).on('click', '.attendance-window-bg', function(){
  $('.attendance-window-container').remove();
 });
 
-$(document).on('click', '.attendance-virtual', function(event){
-    if (!$(event.target).is(".toggle")) {
-        return;
-    }
-    else {
-        $(this).children('[data-toggle="parent"]').trigger('click');
-    }
-});
-
 $(document).on('click', '.attendance-status', function(){
     $('[data-save="attendance"]').addClass('cta');
     $clickedCalEvent.parents('.cal-day').find('.cal-saved-status').addClass('unsaved');
