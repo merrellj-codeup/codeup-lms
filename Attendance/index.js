@@ -22,9 +22,7 @@ $(document).on('click', '.cal-saved-status', function(){
 $(document).on('click', '.cal-event', function(){
     $clickedCalEvent = $(this);
     let currentStatus = $(this).find('.cal-event-status').text();
-    $('[data-save="attendance"]').addClass('cta');
-    $(this).parents('.cal-day').find('.cal-saved-status').addClass('unsaved');
-    $(this).parents('.cal-day').find('.cal-saved-status').children('div').text('Unsaved');
+    
 
     let attendanceWindow = `
     <div class="attendance-window-container">
@@ -74,14 +72,43 @@ $(document).on('click', '.attendance-window-bg', function(){
  $('.attendance-window-container').remove();
 });
 
-$(document).on('click', '.attendance-virtual:not([data-toggle="parent"])', function(){
-    $('[data-toggle="parent"]').trigger('click');
+$(document).on('click', '.attendance-virtual', function(event){
+    if (!$(event.target).is(".toggle")) {
+        return;
+    }
+    else {
+        $('[data-toggle="parent"]').trigger('click');
+    }
 });
 
 $(document).on('click', '.attendance-status', function(){
+    $('[data-save="attendance"]').addClass('cta');
+    $clickedCalEvent.parents('.cal-day').find('.cal-saved-status').addClass('unsaved');
+    $clickedCalEvent.parents('.cal-day').find('.cal-saved-status').children('div').text('Unsaved');
     let newStatus = $(this).find('.cal-event-status').text();
+    let newStatusHTML = " ";
+    switch (newStatus) {
+        case "P":
+            newStatusHTML = `<div class="cal-event-status present">P</div>`;
+            break;
+        case "T":
+            newStatusHTML = `<div class="cal-event-status tardy">T</div>`;
+            break;
+        case "H":
+            newStatusHTML = `<div class="cal-event-status tardy">H</div>`;
+            break;
+        case "L":
+            newStatusHTML = `<div class="cal-event-status tardy">L</div>`;
+            break;
+        case "A":
+            newStatusHTML = `<div class="cal-event-status absent">A</div>`;
+            break;
+        case "UA":
+            newStatusHTML = `<div class="cal-event-status unexcused">UA</div>`;
+            break;
+    }
     $clickedCalEvent.html(`
-        <div class="cal-event-status present">P</div>
+        ${newStatusHTML}
     `);
     $('.attendance-window-container').remove();
 });
