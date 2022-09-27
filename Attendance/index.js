@@ -155,18 +155,18 @@ $(document).on('click', '.attendance-status', function(){
 });
 
 $(document).on('click', '[data-change-week]', function(){
- let direction = $(this).attr('data-change-week');
- let $currentWeek = $('.calender-week.current');
- switch (direction) {
-    case "left":
-        console.log('moving week left');
-        $currentWeek.prev('.left', '.current');
-        $currentWeek.toggleClass('.current', '.right');
-        break;
-    case "right":
-        console.log('moving week right');
-        $currentWeek.next('.right', '.current');
-        $currentWeek.toggleClass('.current', '.left');
-        break;
- }
+    let direction = $(this).attr('data-change-week');
+    let $currentWeek = $('.calendar-week.current');
+    switch (direction) {
+        case "left":
+            console.log('moving week left');
+            $currentWeek.prev('.left', '.current');
+            $currentWeek.toggleClass('.current', '.right');
+            break;
+        case "right":
+            console.log('moving week right');
+            $currentWeek.next('.right', '.current');
+            $currentWeek.toggleClass('.current', '.left');
+            break;
+    }
 });
