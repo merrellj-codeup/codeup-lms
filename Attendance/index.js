@@ -28,6 +28,9 @@ $(document).ready(function(){
             title: {
               display: false,
               text: 'Chart.js Pie Chart'
+            },
+            labels: {
+                display: false
             }
           }
         },
