@@ -160,13 +160,17 @@ $(document).on('click', '[data-change-week]', function(){
     switch (direction) {
         case "left":
             console.log('moving week left');
-            $currentWeek.prev().toggleClass('left', 'current');
-            $currentWeek.toggleClass('current', 'right');
+            $currentWeek.prev().removeClass('left');
+            $currentWeek.prev().addClass('current');
+            $currentWeek.removeClass('current');
+            $currentWeek.addClass('right');
             break;
         case "right":
             console.log('moving week right');
-            $currentWeek.next().toggleClass('right', 'current');
-            $currentWeek.toggleClass('current', 'left');
+            $currentWeek.prev().removeClass('right');
+            $currentWeek.prev().addClass('current');
+            $currentWeek.removeClass('current');
+            $currentWeek.addClass('left');
             break;
     }
 });
