@@ -23,7 +23,7 @@ $(document).ready(function(){
           responsive: true,
           plugins: {
             legend: {
-              position: 'top',
+              position: 'bottom'
               //display: false
             },
             title: {
