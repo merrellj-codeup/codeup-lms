@@ -163,7 +163,7 @@ $(document).on('click', '[data-change-week]', function(){
         $currentWeek.toggleClass('.current', '.right');
         break;
     case "right":
-        $currentWeek.nect('.right', '.current');
+        $currentWeek.next('.right', '.current');
         $currentWeek.toggleClass('.current', '.left');
         break;
  }
