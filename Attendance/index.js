@@ -79,5 +79,9 @@ $(document).on('click', '.attendance-virtual:not([data-toggle="parent"])', funct
 });
 
 $(document).on('click', '.attendance-status', function(){
+    let newStatus = $(this).find('.cal-event-status').text();
+    $clickedCalEvent.html(`
+        <div class="cal-event-status present">P</div>
+    `);
     $('.attendance-window-container').remove();
 });
