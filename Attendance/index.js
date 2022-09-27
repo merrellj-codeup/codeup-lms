@@ -77,7 +77,7 @@ $(document).on('click', '.attendance-virtual', function(event){
         return;
     }
     else {
-        $('[data-toggle="parent"]').trigger('click');
+        $(this).children('[data-toggle="parent"]').trigger('click');
     }
 });
 
