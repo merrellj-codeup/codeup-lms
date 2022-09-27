@@ -137,6 +137,15 @@ $(document).bind("addToCart",function(e){
   });
 });
 
+$('[data-toggle="parent"]').on('click', function(){
+  var toggleParent = $(this);
+  var toggleWrapper = $(this).find('[data-toggle="wrapper"]');
+  var toggleButton = $(this).find('[data-toggle="button"]');
+  
+  toggleParent.toggleClass('on');
+  toggleWrapper.toggleClass('on');
+  toggleButton.toggleClass('on');
+});
 
 function toggleMobileMenu(){
   var toggle = $('.user-menu-toggle'),
