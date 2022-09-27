@@ -1,3 +1,5 @@
+import * as Utils from Utils
+
 let $clickedCalEvent = {};
 $(document).ready(function(){
     const ctx = document.getElementById('myChart');
