@@ -27,7 +27,7 @@ $(document).on('click', '.cal-event', function(event){
     let attendanceWindow = `
     <div class="attendance-window-container">
         <div class="attendance-window-bg"></div>
-        <div class="attendance-status-window">
+        <div class="attendance-status-window" style="top: ${event.pageY}; left: ${event.pageX};">
             <div class="attendance-status-window-inner">
                 <div class="attendance-status">
                     <div class="cal-event-status present">P</div>
