@@ -31,31 +31,31 @@ $(document).on('click', '.cal-event', function(){
         <div class="attendance-window-bg"></div>
         <div class="attendance-status-window">
             <div class="attendance-status-window-inner">
-                <div class="div-block-12">
+                <div class="attendance-status">
                     <div class="cal-event-status present">P</div>
                     <div>Present</div>
                 </div>
-                <div class="div-block-12">
+                <div class="attendance-status">
                     <div class="cal-event-status tardy">T</div>
                     <div>Tardy</div>
                 </div>
-                <div class="div-block-12">
+                <div class="attendance-status">
                     <div class="cal-event-status tardy">H</div>
                     <div>Half-Day</div>
                 </div>
-                <div class="div-block-12">
+                <div class="attendance-status">
                     <div class="cal-event-status tardy">L</div>
                     <div>Left Early</div>
                 </div>
-                <div class="div-block-12">
+                <div class="attendance-status">
                     <div class="cal-event-status absent">A</div>
                     <div>Absent</div>
                 </div>
-                <div class="div-block-12">
+                <div class="attendance-status">
                     <div class="cal-event-status unexcused">UA</div>
                     <div>Unexcused Absence</div>
                 </div>
-                <div class="div-block-12 virtual">
+                <div class="attendance-virtual">
                     <div>Virtual?</div>
                     <div data-toggle="parent" class="toggle">
                         <div data-toggle="wrapper" class="toggle-button-wrapper">
@@ -72,4 +72,12 @@ $(document).on('click', '.cal-event', function(){
 
 $(document).on('click', '.attendance-window-bg', function(){
  $('.attendance-window-container').remove();
+});
+
+$(document).on('click', '.attendance-virtual:not([data-toggle="parent"])', function(){
+    $('[data-toggle="parent"]').trigger('click');
+});
+
+$(document).on('click', '.attendance-status', function(){
+    $('.attendance-window-container').remove();
 });
