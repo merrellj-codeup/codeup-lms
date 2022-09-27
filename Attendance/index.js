@@ -53,3 +53,7 @@ $(document).on('click', '.cal-event', function(){
     //         break;
     // }
 });
+
+$(document).on('click', '.attendance-window-bg', function(){
+ $('.attendance-window-container').remove();
+});
