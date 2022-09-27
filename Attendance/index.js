@@ -78,24 +78,37 @@ $(document).on('click', '.attendance-status', function(){
     $clickedCalEvent.parents('.cal-day').find('.cal-saved-status').children('div').text('Unsaved');
     let newStatus = $(this).find('.cal-event-status').text();
     let newStatusHTML = " ";
+    let isVirtual = $('.attendance-virtual').find('[data-toggle="parent"]').hasClass('on') ? 'V' : '';
     switch (newStatus) {
         case "P":
-            newStatusHTML = `<div class="cal-event-status present">P</div>`;
+            newStatusHTML = `
+                <div class="cal-event-status present">P${isVirtual}</div>
+            `;
             break;
         case "T":
-            newStatusHTML = `<div class="cal-event-status tardy">T</div>`;
+            newStatusHTML = `
+                <div class="cal-event-status tardy">T${isVirtual}</div>
+            `;
             break;
         case "H":
-            newStatusHTML = `<div class="cal-event-status tardy">H</div>`;
+            newStatusHTML = `
+                <div class="cal-event-status tardy">H${isVirtual}</div>
+            `;
             break;
         case "L":
-            newStatusHTML = `<div class="cal-event-status tardy">L</div>`;
+            newStatusHTML = `
+                <div class="cal-event-status tardy">L${isVirtual}</div>
+            `;
             break;
         case "A":
-            newStatusHTML = `<div class="cal-event-status absent">A</div>`;
+            newStatusHTML = `
+                <div class="cal-event-status absent">A</div>
+            `;
             break;
         case "UA":
-            newStatusHTML = `<div class="cal-event-status unexcused">UA</div>`;
+            newStatusHTML = `
+                <div class="cal-event-status unexcused">UA</div>
+            `;
             break;
     }
     $clickedCalEvent.html(`
