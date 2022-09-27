@@ -23,11 +23,11 @@ $(document).on('click', '.cal-event', function(event){
     $clickedCalEvent = $(this);
     let currentStatus = $(this).find('.cal-event-status').text();
     console.log(event.pageX + ', ' + event.pageY);
-
+    let windowLeft = ( (event.pageX + 200) > $(window).width() ) ? (event.pageX - 200) : event.pageX;
     let attendanceWindow = `
     <div class="attendance-window-container">
         <div class="attendance-window-bg"></div>
-        <div class="attendance-status-window" style="top: ${event.pageY}px; left: ${event.pageX}px;">
+        <div class="attendance-status-window" style="top: ${event.pageY}px; left: ${windowLeft}px;">
             <div class="attendance-status-window-inner">
                 <div class="attendance-status">
                     <div class="cal-event-status present">P</div>
