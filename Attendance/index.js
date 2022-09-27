@@ -167,8 +167,8 @@ $(document).on('click', '[data-change-week]', function(){
             break;
         case "right":
             console.log('moving week right');
-            $currentWeek.prev().removeClass('right');
-            $currentWeek.prev().addClass('current');
+            $currentWeek.next().removeClass('right');
+            $currentWeek.next().addClass('current');
             $currentWeek.removeClass('current');
             $currentWeek.addClass('left');
             break;
