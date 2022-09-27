@@ -58,7 +58,7 @@ $(document).on('click', '.cal-saved-status', function(){
 $(document).on('click', '.cal-event', function(event){
     $clickedCalEvent = $(this);
     let currentStatus = $(this).find('.cal-event-status').text();
-    console.log(event.pageX + ', ' + event.pageY);
+    //console.log(event.pageX + ', ' + event.pageY);
     let windowLeft = ( (event.pageX + 200) > $(window).width() ) ? (event.pageX - 200) : event.pageX;
     let windowTop = ( (event.pageY + 245) > $(window).height() ) ? (event.pageY - 245) : event.pageY;
     let attendanceWindow = `
@@ -152,4 +152,19 @@ $(document).on('click', '.attendance-status', function(){
         ${newStatusHTML}
     `);
     $('.attendance-window-container').remove();
+});
+
+$(document).on('click', '[data-change-week]', function(){
+ let direction = $(this).attr('data-change-week');
+ let $currentWeek = $('.calender-week.current');
+ switch (direction) {
+    case "left":
+        $currentWeek.prev('.left', '.current');
+        $currentWeek.toggleClass('.current', '.right');
+        break;
+    case "right":
+        $currentWeek.nect('.right', '.current');
+        $currentWeek.toggleClass('.current', '.left');
+        break;
+ }
 });
