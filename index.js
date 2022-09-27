@@ -137,7 +137,7 @@ $(document).bind("addToCart",function(e){
   });
 });
 
-$('[data-toggle="parent"]').on('click', function(){
+$(document).on('click', '[data-toggle="parent"]', function(){
   var toggleParent = $(this);
   var toggleWrapper = $(this).find('[data-toggle="wrapper"]');
   var toggleButton = $(this).find('[data-toggle="button"]');

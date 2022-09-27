@@ -1,3 +1,4 @@
+let $clickedCalEvent = {};
 $(document).on('click', '.cal-saved-status', function(){
     let currentStatus = $(this).text();
     switch(currentStatus){
@@ -19,6 +20,7 @@ $(document).on('click', '.cal-saved-status', function(){
 });
 
 $(document).on('click', '.cal-event', function(){
+    $clickedCalEvent = $(this);
     let currentStatus = $(this).find('.cal-event-status').text();
     $('[data-save="attendance"]').addClass('cta');
     $(this).parents('.cal-day').find('.cal-saved-status').addClass('unsaved');
