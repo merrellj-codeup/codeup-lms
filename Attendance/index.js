@@ -23,14 +23,12 @@ $(document).ready(function(){
           responsive: true,
           plugins: {
             legend: {
-              position: 'top',
+              //position: 'top',
+              display: false
             },
             title: {
               display: false,
               text: 'Chart.js Pie Chart'
-            },
-            labels: {
-                display: false
             }
           }
         },
