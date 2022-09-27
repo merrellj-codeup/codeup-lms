@@ -65,7 +65,7 @@ $(document).on('click', '.cal-event', function(){
         </div>
     </div>
     `;
-    $(attendanceWindow).appendAfter('.main');
+    $(attendanceWindow).insertAfter('.main');
 });
 
 $(document).on('click', '.attendance-window-bg', function(){
