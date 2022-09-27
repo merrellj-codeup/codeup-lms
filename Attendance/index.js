@@ -22,7 +22,7 @@ $(document).on('click', '.cal-saved-status', function(){
 $(document).on('click', '.cal-event', function(){
     $clickedCalEvent = $(this);
     let currentStatus = $(this).find('.cal-event-status').text();
-    
+    console.log($clickedCalEvent.position());
 
     let attendanceWindow = `
     <div class="attendance-window-container">
