@@ -2,7 +2,34 @@
     "students": {
         "001": {
             "first_name": "Lola",
-            "last_name": "Castillo"
-        }
-    }
+            "last_name": "Castillo",
+            "attendance": {
+                "20220925": {
+                    "status": "P"
+                },
+                "20220926": {
+                    "status": "P"
+                },
+                "20220927": {
+                    "status": "P"
+                }
+            }
+        },
+        "002": {
+            "first_name": "Jason",
+            "last_name": "Merrell",
+            "attendance": {
+                "20220925": {
+                    "status": "P"
+                },
+                "20220926": {
+                    "status": "P"
+                },
+                "20220927": {
+                    "status": "P"
+                }
+            }
+        },
+    },
+
 }
